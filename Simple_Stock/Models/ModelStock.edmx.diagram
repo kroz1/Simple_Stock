@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f31d79b483143058096a566dc3f28c5" Name="Diagram1">
+        <EntityTypeShape EntityType="simple_stockModel.accesspoint" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.almacenamiento" Width="1.5" PointX="3.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.categorias" Width="1.5" PointX="1.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.centrodedatos" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.conmutador" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.disprespaldo" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.enlaces" Width="1.5" PointX="3.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial" Width="1.5" PointX="11" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_access" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_almacenamiento" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_centro" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_conmutador" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_disprespaldo" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_enlace" Width="1.5" PointX="6" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_servidor" Width="1.5" PointX="9" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.historial_switrout" Width="1.5" PointX="9" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.products" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.servidores" Width="1.5" PointX="6.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.switrout" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simple_stockModel.users" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_ac__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_accesspoint" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_al__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_almacenamiento" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__centroded__id_ca__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__servidore__id_ca__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__switrout__id_cat__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_ce__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_co__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_conmutador" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_di__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_disprespaldo" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_en__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_enlaces" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_pr__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_se__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_servidor" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__id_sw__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.FK__historial__user___5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="simple_stockModel.fk_id_switrout" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
