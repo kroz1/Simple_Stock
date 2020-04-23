@@ -54,7 +54,8 @@
                     data: "user_id", "render": function (user_id) {
                         return '<button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminar(' + user_id
                                 + ');"><i class="fa fa-trash"></i></button> <button type="button" class="btn btn-outline-primary btn-sm" onclick="editar(' + user_id
-                                + ');"><i class="fas fa-pencil-alt"></i></button>';
+                                + ');"><i class="fas fa-pencil-alt"></i></button> <button type="button" class="btn btn-outline-secondary btn-sm" onclick="editarContrasena(' + user_id
+                                + ');"><i class="fas fa-tools"></i></button>';
                     }
                 },
                 {
@@ -74,7 +75,7 @@
                     "render": function (data, type, row, meta) {
                         return row.user_email;
                     },
-                },                
+                },
                 {
                     "name": "date_added",
                     "render": function (data, type, row, meta) {
@@ -90,6 +91,10 @@
 
         $('#btnGuardar').click(function () {
             guardar();
+        })
+
+        $('#btnGuardarContrasena').click(function () {
+            guardarContrasena();
         })
     })
 
@@ -200,6 +205,61 @@
             });
     }
 
+    function editar(user_id) {
+        $.ajax({
+            type: "POST",
+            url: "/Usuarios/editar",
+            data: { "user_id": user_id },
+            success: function (data) {
+                $('#modalEditarUsuarios').modal('show');
+                $("#divMensajeError").hide();
+                $("#divMensaje").hide();
+                if (data["status"] == true) {
+                    $('#user_id').val(data["datos"]["user_id"]);
+                    $('#txtNombre').val(data["datos"]["firstname"]);
+                    $('#txtApellidos').val(data["datos"]["lastname"]);
+                    $('#txtUsuario').val(data["datos"]["user_name"]);
+                    $('#txtEmail').val(data["datos"]["user_email"]);
+                }
+                else {
+                    $("#divMensajeError").show();
+                    $("#divMensajeError").html(data["mensaje"]);
+                }
+            },
+            error: function (error) {
+                $('#modalEditarUsuarios').modal('toggle');
+                $("#divMensajeError").show()
+                $("#divMensajeError").html(error);
+            }
+        });
+    }
+
+    function editarContrasena(user_id) {
+        $.ajax({
+            type: "POST",
+            url: "/Usuarios/editar",
+            data: { "user_id": user_id },
+            success: function (data) {
+                $('#modalPassword').modal('show');
+                $("#divMensajeError").hide();
+                $("#divMensaje").hide();
+                if (data["status"] == true) {
+                    $('#txtContraseña').val(data["datos"]["user_password_hash"]);
+                    $('#txtContraseña2').val(data["datos"]["user_password_hash"]);
+                }
+                else {
+                    $("#divMensajeError").show();
+                    $("#divMensajeError").html(data["mensaje"]);
+                }
+            },
+            error: function (error) {
+                $('#modalPassword').modal('toggle');
+                $("#divMensajeError").show()
+                $("#divMensajeError").html(error);
+            }
+        });
+    }
+
     //Actualiza la datatable
     function actualizar() {
         table.ajax.reload(null, false); //reload de datatable ajax
@@ -213,7 +273,7 @@
 
 <div class="card border-success mb-3" style="max-width: 80rem;">
     <div class="card-header">
-        <strong><i class="fas fa-users"></i> USUARIÓS</strong>
+        <strong><i class="fas fa-users"></i> USUARIOS</strong>
         @*<button type="button" id="btnActualizar" class="btn btn-info float-right"><i class="fas fa-redo"></i> Actualizar</button>*@
 
         <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#modalUsuarios"><i class="fas fa-plus"></i> Agregar Usuario</button>
@@ -243,7 +303,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Agregar Usuario</h4>
+                <h4 class="modal-title"><i class="fas fa-user-plus"></i> Agregar Usuario</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -269,6 +329,71 @@
                 <div id="divBotones">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
                     <button id="btnGuardar" type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal edit user-->
+<div class="modal fade" id="modalEditarUsuarios">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><i class="fas fa-user-edit"></i> Editar Usuario</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <input type="hidden" id="user_id" name="user_id" />
+                <label>Nombre</label>
+                <input type="text" id="txtNombre" name="txtNombre" class="form-control">
+                <label>Apellidos</label>
+                <input type="text" id="txtApellidos" name="txtApellidos" class="form-control">
+                <label>Usuario</label>
+                <input type="text" id="txtUsuario" name="txtUsuario" class="form-control">
+                <label>Email</label>
+                <input type="text" id="txtEmail" name="txtEmail" class="form-control">               
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <div id="divBotones">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button id="btnGuardar" type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal edit password -->
+<div class="modal fade" id="modalPassword">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><i class="fas fa-user-edit"></i> Editar Contraseña</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <label>Nueva Contraseña</label>
+                <input type="password" id="txtContraseña" name="txtContraseña" class="form-control">
+                <label>Repite contraseña</label>
+                <input type="password" id="txtContraseña2" name="txtContraseña2" class="form-control">
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <div id="divBotones">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button id="btnGuardarContrasena" type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i> Guardar</button>
                 </div>
             </div>
         </div>

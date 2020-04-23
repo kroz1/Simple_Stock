@@ -60,6 +60,7 @@ namespace Simple_Stock.Controllers
             }
         }
 
+
         public JsonResult guardar(cCategorias categorias)
         {
             categorias objCategorias = new categorias();

@@ -28,6 +28,7 @@ namespace Simple_Stock.Controllers
                 //ciclo para recorrer los usuarios registrados
                 foreach(users users in query)
                 {
+                    o.user_id = users.user_id;
                     o.firstname = users.firstname;
                     o.lastname = users.lastname;
                     o.user_name = users.user_name;
@@ -60,6 +61,12 @@ namespace Simple_Stock.Controllers
                 });
             }
         }
+
+        //public JsonResult editarContrasena(int user_id)
+        //{
+
+        //}
+
 
         public JsonResult guardar(cUsers objUsuarios)
         {
@@ -137,6 +144,25 @@ namespace Simple_Stock.Controllers
                 db.SaveChanges();
 
                 return Json(new { status = true, mensaje = "Usuario eliminado" });
+            }
+        }
+
+        //metodo para cargar la informacion del usuario seleccionado para poder editar sus datos
+        public JsonResult editar(int user_id)
+        {
+            users objUsers = new users();
+            if(user_id == 0)
+            {
+                return Json(new { status = false, mensaje = "El id esta en 0" });
+            }
+            else
+            {
+                objUsers = db.users.Where(a => a.user_id == user_id).FirstOrDefault();
+                if(objUsers == null)
+                {
+                    return Json(new { status = false, mensaje = "No existe el registro" });
+                }
+                return Json(new { status = true, mensaje = "Datos cargados", datos = objUsers });
             }
         }
     }
