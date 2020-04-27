@@ -34,7 +34,7 @@ namespace Simple_Stock.Controllers
                     o.user_name = users.user_name;
                     o.user_password_hash = users.user_password_hash;
                     o.user_email = users.user_email;
-                    o.date_added = DateTime.Now;
+                    o.date_added = users.date_added;
 
                     listaUsuarios.Add(o);
                 }
