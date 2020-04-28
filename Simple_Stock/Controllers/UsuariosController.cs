@@ -22,12 +22,12 @@ namespace Simple_Stock.Controllers
         {
             try
             {
-                cUsers o = new cUsers();
                 var query = (from u in db.users select u).OrderBy(a => a.user_id).ToList<users>();
                 List<cUsers> listaUsuarios = new List<cUsers>();
                 //ciclo para recorrer los usuarios registrados
                 foreach(users users in query)
                 {
+                    cUsers o = new cUsers();
                     o.user_id = users.user_id;
                     o.firstname = users.firstname;
                     o.lastname = users.lastname;

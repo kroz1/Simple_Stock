@@ -216,10 +216,10 @@
                 $("#divMensaje").hide();
                 if (data["status"] == true) {
                     $('#user_id').val(data["datos"]["user_id"]);
-                    $('#txtNombre').val(data["datos"]["firstname"]);
-                    $('#txtApellidos').val(data["datos"]["lastname"]);
-                    $('#txtUsuario').val(data["datos"]["user_name"]);
-                    $('#txtEmail').val(data["datos"]["user_email"]);
+                    $('#txtEditarNombre').val(data["datos"]["firstname"]);
+                    $('#txtEditarApellidos').val(data["datos"]["lastname"]);
+                    $('#txtEditarUsuario').val(data["datos"]["user_name"]);
+                    $('#txtEditarEmail').val(data["datos"]["user_email"]);
                 }
                 else {
                     $("#divMensajeError").show();
@@ -350,13 +350,13 @@
             <div class="modal-body">
                 <input type="hidden" id="user_id" name="user_id" />
                 <label>Nombre</label>
-                <input type="text" id="txtNombre" name="txtNombre" class="form-control">
+                <input type="text" id="txtEditarNombre" name="txtEditarNombre" class="form-control">
                 <label>Apellidos</label>
-                <input type="text" id="txtApellidos" name="txtApellidos" class="form-control">
+                <input type="text" id="txtEditarApellidos" name="txtEditarApellidos" class="form-control">
                 <label>Usuario</label>
-                <input type="text" id="txtUsuario" name="txtUsuario" class="form-control">
+                <input type="text" id="txtEditarUsuario" name="txtEditarUsuario" class="form-control">
                 <label>Email</label>
-                <input type="text" id="txtEmail" name="txtEmail" class="form-control">               
+                <input type="text" id="txtEditarEmail" name="txtEditarEmail" class="form-control">
             </div>
 
             <!-- Modal footer -->
