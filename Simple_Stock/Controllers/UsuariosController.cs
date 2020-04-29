@@ -71,11 +71,11 @@ namespace Simple_Stock.Controllers
         public JsonResult guardar(cUsers objUsuarios)
         {
             users o = new users();
-            if(objUsuarios.firstname == null)
+            if (objUsuarios.firstname == null)
             {
                 return Json(new { status = false, mensaje = "El nombre es un campo obligatorio" });
             }
-            if(objUsuarios.lastname == null)
+            if (objUsuarios.lastname == null)
             {
                 return Json(new { status = false, mensaje = "El Apellido es un campo obligatorio" });
             }
@@ -92,35 +92,67 @@ namespace Simple_Stock.Controllers
                 return Json(new { status = false, mensaje = "El Correo electrónico es un campo obligatorio" });
             }
 
-            if(objUsuarios.user_id != 0)
-            {
-                o = db.users.Where(a => a.user_id == objUsuarios.user_id).FirstOrDefault();
-                if(o == null)
-                {
-                    return Json(new { status = false, mensaje = "No existe el registro"});
-                }
-                o.firstname = objUsuarios.firstname;
-                o.lastname = objUsuarios.lastname;
-                o.user_name = objUsuarios.user_name;
-                o.user_password_hash = objUsuarios.user_password_hash;
-                o.user_email = objUsuarios.user_email;
-                o.date_added = DateTime.Now;
+            o.firstname = objUsuarios.firstname;
+            o.lastname = objUsuarios.lastname;
+            o.user_name = objUsuarios.user_name;
+            o.user_password_hash = objUsuarios.user_password_hash;
+            o.user_email = objUsuarios.user_email;
+            o.date_added = DateTime.Now;
 
-                db.users.Attach(o);
-                db.Entry(o).State = System.Data.Entity.EntityState.Modified;
-            }
-            else
-            {
-                o.firstname = objUsuarios.firstname;
-                o.lastname = objUsuarios.lastname;
-                o.user_name = objUsuarios.user_name;
-                o.user_password_hash = objUsuarios.user_password_hash;
-                o.user_email = objUsuarios.user_email;
-                o.date_added = DateTime.Now;
-
-                db.users.Add(o);
-            }
+            db.users.Add(o);
+            
             db.SaveChanges();
+            return Json(new { status = true, mensaje = "Datos guardados", datos = o });
+        }
+
+        public JsonResult guardarCambios(cUsers objUsuarios)
+        {
+            users o = new users();
+
+            o = db.users.Where(a => a.user_id == objUsuarios.user_id).FirstOrDefault();
+            if (o == null)
+            {
+                return Json(new { status = false, mensaje = "No existe el registro" });
+            }
+            o.firstname = objUsuarios.firstname;
+            o.lastname = objUsuarios.lastname;
+            o.user_name = objUsuarios.user_name;
+            o.user_email = objUsuarios.user_email;
+            //o.date_added = DateTime.Now;
+
+            db.users.Attach(o);
+            db.Entry(o).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
+            return Json(new { status = true, mensaje = "Datos guardados", datos = o });
+        }
+
+        public JsonResult guardarNuevaContrasena(cUsers objUsuarios)
+        {
+            users o = new users();
+
+            if (objUsuarios.user_id == 0)
+            {
+                return Json(new { status = false, mensaje = "El id viene en 0" });
+            }
+
+            if (objUsuarios.user_password_hash == null)
+            {
+                return Json(new { status = false, mensaje = "La contraseña viene en nulo" });
+            }
+
+            o = db.users.Where(a => a.user_id == objUsuarios.user_id).FirstOrDefault();
+            if (o == null)
+            {
+                return Json(new { status = false, mensaje = "No existe el registro" });
+            }
+
+            o.user_password_hash = objUsuarios.user_password_hash;
+
+            db.users.Attach(o);
+            db.Entry(o).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
             return Json(new { status = true, mensaje = "Datos guardados", datos = o });
         }
 

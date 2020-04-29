@@ -13,6 +13,6 @@ namespace Simple_Stock.cModels
         public string user_name { get; set; }
         public string user_password_hash { get; set; }
         public string user_email { get; set; }
-        public System.DateTime date_added { get; set; }
+        public Nullable<System.DateTime> date_added { get; set; }
     }
 }

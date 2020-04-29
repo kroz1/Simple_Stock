@@ -89,12 +89,16 @@
             ]
         });
 
+        $('#btnGuardarCambios').click(function () {
+            editarUsuario();
+        })
+
         $('#btnGuardar').click(function () {
             guardar();
         })
 
         $('#btnGuardarContrasena').click(function () {
-            guardarContrasena();
+            guardarNuevaContrasena();
         })
     })
 
@@ -121,6 +125,110 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Se ha guardado el usuario',
+                                showCloseButton: true,
+                                allowEnterKey: true,
+                                onClose: () => {
+                                    $('#user_id').val(data["datos"]["user_id"]);
+                                    actualizar();
+                                }
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                showConfirmButton: true,
+                                text: data["mensaje"]
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: request.responseText
+                        });
+                    }
+                });
+            },
+            onClose: () => {
+
+            }
+        });
+    }
+
+    function guardarNuevaContrasena() {
+        Swal.fire({
+            title: "Guardando..",
+            onOpen: () => {
+                swal.showLoading()
+                $.ajax({
+                    type: "POST",
+                    url: "/Usuarios/guardarNuevaContrasena",
+                    data: {
+                        "user_id": $('#user_id').val(),
+                        "user_password_hash": $('#txtNuevaContraseña').val(),
+                        "user_password_hash": $('#txtNuevaContraseña2').val()
+                    },
+                    success: function (data) {
+                        $("#divBotones").show();
+                        if (data["status"] == true) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Se ha guardado la nueva contraseña',
+                                showCloseButton: true,
+                                allowEnterKey: true,
+                                onClose: () => {
+                                    $('#user_id').val(data["datos"]["user_id"]);
+                                    actualizar();
+                                }
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                showConfirmButton: true,
+                                text: data["mensaje"]
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: request.responseText
+                        });
+                    }
+                });
+            },
+            onClose: () => {
+
+            }
+        });
+    }
+
+    function editarUsuario() {
+        Swal.fire({
+            title: "Guardando..",
+            onOpen: () => {
+                swal.showLoading()
+                $.ajax({
+                    type: "POST",
+                    url: "/Usuarios/guardarCambios",
+                    data: {
+                        "user_id": $('#user_id').val(),
+                        "firstname": $('#txtEditarNombre').val(),
+                        "lastname": $('#txtEditarApellidos').val(),
+                        "user_name": $('#txtEditarUsuario').val(),
+                        "user_email": $('#txtEditarEmail').val(),
+                    },
+                    success: function (data) {
+                        $("#divBotones").show();
+                        if (data["status"] == true) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Se han guardado los cambios',
                                 showCloseButton: true,
                                 allowEnterKey: true,
                                 onClose: () => {
@@ -244,8 +352,9 @@
                 $("#divMensajeError").hide();
                 $("#divMensaje").hide();
                 if (data["status"] == true) {
-                    $('#txtContraseña').val(data["datos"]["user_password_hash"]);
-                    $('#txtContraseña2').val(data["datos"]["user_password_hash"]);
+                    $('#user_id').val(data["datos"]["user_id"]);
+                    $('#txtNuevaContraseña').val(data["datos"]["user_password_hash"]);
+                    $('#txtNuevaContraseña2').val(data["datos"]["user_password_hash"]);
                 }
                 else {
                     $("#divMensajeError").show();
@@ -363,7 +472,7 @@
             <div class="modal-footer">
                 <div id="divBotones">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
-                    <button id="btnGuardar" type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i> Guardar</button>
+                    <button id="btnGuardarCambios" type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i> Guardar</button>
                 </div>
             </div>
         </div>
@@ -383,10 +492,11 @@
 
             <!-- Modal body -->
             <div class="modal-body">
+                <input type="hidden" id="user_id" name="user_id" />
                 <label>Nueva Contraseña</label>
-                <input type="password" id="txtContraseña" name="txtContraseña" class="form-control">
+                <input type="password" id="txtNuevaContraseña" name="txtNuevaContraseña" class="form-control">
                 <label>Repite contraseña</label>
-                <input type="password" id="txtContraseña2" name="txtContraseña2" class="form-control">
+                <input type="password" id="txtNuevaContraseña2" name="txtNuevaContraseña2" class="form-control">
             </div>
 
             <!-- Modal footer -->

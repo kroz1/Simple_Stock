@@ -4,807 +4,806 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="simple_stockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="accesspoint">
-          <Key>
-            <PropertyRef Name="id_accesspoint" />
-          </Key>
-          <Property Name="id_accesspoint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="codigo" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="estatus" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="asignado" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="mac_address" Type="int" Nullable="false" />
-          <Property Name="tipo_seguridad" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="almacenamiento">
-          <Key>
-            <PropertyRef Name="id_almacenamiento" />
-          </Key>
-          <Property Name="id_almacenamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_almacen" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="stock_almacen" Type="int" Nullable="false" />
-          <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="capacidad" Type="int" Nullable="false" />
-          <Property Name="conectividad" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="categorias">
-          <Key>
-            <PropertyRef Name="id_categoria" />
-          </Key>
-          <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_categoria" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="descripcion_categoria" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="date_added" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="centrodedatos">
-          <Key>
-            <PropertyRef Name="id_centro" />
-          </Key>
-          <Property Name="id_centro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_centro" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="stock_center" Type="int" Nullable="false" />
-          <Property Name="planta_emergencia" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ups" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="aire_acondicionado" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="generalidades" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="conmutador">
-          <Key>
-            <PropertyRef Name="id_conmutador" />
-          </Key>
-          <Property Name="id_conmutador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_conmutador" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="tecnologia" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="cant_entrantes" Type="int" Nullable="false" />
-          <Property Name="cant_extensiones" Type="int" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="disprespaldo">
-          <Key>
-            <PropertyRef Name="id_disprespaldo" />
-          </Key>
-          <Property Name="id_disprespaldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_resp" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="herramienta_resp" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="tipo_medio" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="informacion" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="periodicidad" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="lugar_resguardo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="enlaces">
-          <Key>
-            <PropertyRef Name="id_enlaces" />
-          </Key>
-          <Property Name="id_enlaces" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_enlace" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ancho_banda" Type="int" Nullable="false" />
-          <Property Name="frecuencia" Type="int" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_producto" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_access">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_accesspoint" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_almacenamiento">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_almacenamiento" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_centro">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_centro" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_conmutador">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_conmutador" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_disprespaldo">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_disprespaldo" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_enlace">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_enlaces" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_servidor">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_servidor" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="historial_switrout">
-          <Key>
-            <PropertyRef Name="id_historial" />
-          </Key>
-          <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_switrout" Type="int" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="nota" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="referencia" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="products">
-          <Key>
-            <PropertyRef Name="id_producto" />
-          </Key>
-          <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="codigo_producto" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="nombre_producto" Type="char" MaxLength="255" Nullable="false" />
-          <Property Name="asignado" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="stock" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ubicacion" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="estado" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="date_added" Type="datetime" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="servidores">
-          <Key>
-            <PropertyRef Name="id_servidor" />
-          </Key>
-          <Property Name="id_servidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="tipo_servidor" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="nom_servidor" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ip_servidor" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_procesadores" Type="int" Nullable="false" />
-          <Property Name="tipo_procesador" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="vel_procesador" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="nivel_arreglo_discos" Type="int" Nullable="false" />
-          <Property Name="capacidad_almto" Type="int" Nullable="false" />
-          <Property Name="mem_ram" Type="int" Nullable="false" />
-          <Property Name="sist_operativos" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="aplic_principales" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="cuenta_disp" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="interconectado_disp" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="esquema_virtual" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="switrout">
-          <Key>
-            <PropertyRef Name="id_switrout" />
-          </Key>
-          <Property Name="id_switrout" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_sr" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_inventario" Type="int" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="modelo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="num_serie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="vel_transmicion" Type="int" Nullable="false" />
-          <Property Name="num_puertos" Type="int" Nullable="false" />
-          <Property Name="observaciones" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="url_image" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="users">
-          <Key>
-            <PropertyRef Name="user_id" />
-          </Key>
-          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstname" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="lastname" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="user_name" Type="varchar" MaxLength="64" Nullable="false" />
-          <Property Name="user_password_hash" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="user_email" Type="varchar" MaxLength="64" Nullable="false" />
-          <Property Name="date_added" Type="datetime" Nullable="false" />
-        </EntityType>
-        <Association Name="FK__centroded__id_ca__25869641">
-          <End Role="categorias" Type="Self.categorias" Multiplicity="1" />
-          <End Role="centrodedatos" Type="Self.centrodedatos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categorias">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="centrodedatos">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_ac__34C8D9D1">
-          <End Role="accesspoint" Type="Self.accesspoint" Multiplicity="1" />
-          <End Role="historial_access" Type="Self.historial_access" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="accesspoint">
-              <PropertyRef Name="id_accesspoint" />
-            </Principal>
-            <Dependent Role="historial_access">
-              <PropertyRef Name="id_accesspoint" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_al__37A5467C">
-          <End Role="almacenamiento" Type="Self.almacenamiento" Multiplicity="1" />
-          <End Role="historial_almacenamiento" Type="Self.historial_almacenamiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="almacenamiento">
-              <PropertyRef Name="id_almacenamiento" />
-            </Principal>
-            <Dependent Role="historial_almacenamiento">
-              <PropertyRef Name="id_almacenamiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_ce__3A81B327">
-          <End Role="centrodedatos" Type="Self.centrodedatos" Multiplicity="1" />
-          <End Role="historial_centro" Type="Self.historial_centro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="centrodedatos">
-              <PropertyRef Name="id_centro" />
-            </Principal>
-            <Dependent Role="historial_centro">
-              <PropertyRef Name="id_centro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_co__3D5E1FD2">
-          <End Role="conmutador" Type="Self.conmutador" Multiplicity="1" />
-          <End Role="historial_conmutador" Type="Self.historial_conmutador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="conmutador">
-              <PropertyRef Name="id_conmutador" />
-            </Principal>
-            <Dependent Role="historial_conmutador">
-              <PropertyRef Name="id_conmutador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_di__403A8C7D">
-          <End Role="disprespaldo" Type="Self.disprespaldo" Multiplicity="1" />
-          <End Role="historial_disprespaldo" Type="Self.historial_disprespaldo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="disprespaldo">
-              <PropertyRef Name="id_disprespaldo" />
-            </Principal>
-            <Dependent Role="historial_disprespaldo">
-              <PropertyRef Name="id_disprespaldo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_en__4316F928">
-          <End Role="enlaces" Type="Self.enlaces" Multiplicity="1" />
-          <End Role="historial_enlace" Type="Self.historial_enlace" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="enlaces">
-              <PropertyRef Name="id_enlaces" />
-            </Principal>
-            <Dependent Role="historial_enlace">
-              <PropertyRef Name="id_enlaces" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_pr__2F10007B">
-          <End Role="products" Type="Self.products" Multiplicity="1" />
-          <End Role="historial" Type="Self.historial" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="id_producto" />
-            </Principal>
-            <Dependent Role="historial">
-              <PropertyRef Name="id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_se__49C3F6B7">
-          <End Role="servidores" Type="Self.servidores" Multiplicity="1" />
-          <End Role="historial_servidor" Type="Self.historial_servidor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="servidores">
-              <PropertyRef Name="id_servidor" />
-            </Principal>
-            <Dependent Role="historial_servidor">
-              <PropertyRef Name="id_servidor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__id_sw__5070F446">
-          <End Role="switrout" Type="Self.switrout" Multiplicity="1" />
-          <End Role="historial_switrout" Type="Self.historial_switrout" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="switrout">
-              <PropertyRef Name="id_switrout" />
-            </Principal>
-            <Dependent Role="historial_switrout">
-              <PropertyRef Name="id_switrout" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___35BCFE0A">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_access" Type="Self.historial_access" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_access">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___38996AB5">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_almacenamiento" Type="Self.historial_almacenamiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_almacenamiento">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___3B75D760">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_centro" Type="Self.historial_centro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_centro">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___3E52440B">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_conmutador" Type="Self.historial_conmutador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_conmutador">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___412EB0B6">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_disprespaldo" Type="Self.historial_disprespaldo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_disprespaldo">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___440B1D61">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_enlace" Type="Self.historial_enlace" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_enlace">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___4AB81AF0">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_servidor" Type="Self.historial_servidor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_servidor">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__historial__user___5165187F">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="historial_switrout" Type="Self.historial_switrout" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="historial_switrout">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__servidore__id_ca__47DBAE45">
-          <End Role="categorias" Type="Self.categorias" Multiplicity="1" />
-          <End Role="servidores" Type="Self.servidores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categorias">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="servidores">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__switrout__id_cat__4E88ABD4">
-          <End Role="categorias" Type="Self.categorias" Multiplicity="1" />
-          <End Role="switrout" Type="Self.switrout" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categorias">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="switrout">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_accesspoint">
-          <End Role="accesspoint" Type="Self.accesspoint" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_access" Type="Self.historial_access" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="accesspoint">
-              <PropertyRef Name="id_accesspoint" />
-            </Principal>
-            <Dependent Role="historial_access">
-              <PropertyRef Name="id_accesspoint" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_almacenamiento">
-          <End Role="almacenamiento" Type="Self.almacenamiento" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_almacenamiento" Type="Self.historial_almacenamiento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="almacenamiento">
-              <PropertyRef Name="id_almacenamiento" />
-            </Principal>
-            <Dependent Role="historial_almacenamiento">
-              <PropertyRef Name="id_almacenamiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_centro">
-          <End Role="centrodedatos" Type="Self.centrodedatos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_centro" Type="Self.historial_centro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="centrodedatos">
-              <PropertyRef Name="id_centro" />
-            </Principal>
-            <Dependent Role="historial_centro">
-              <PropertyRef Name="id_centro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_conmutador">
-          <End Role="conmutador" Type="Self.conmutador" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_conmutador" Type="Self.historial_conmutador" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="conmutador">
-              <PropertyRef Name="id_conmutador" />
-            </Principal>
-            <Dependent Role="historial_conmutador">
-              <PropertyRef Name="id_conmutador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_disprespaldo">
-          <End Role="disprespaldo" Type="Self.disprespaldo" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_disprespaldo" Type="Self.historial_disprespaldo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="disprespaldo">
-              <PropertyRef Name="id_disprespaldo" />
-            </Principal>
-            <Dependent Role="historial_disprespaldo">
-              <PropertyRef Name="id_disprespaldo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_enlaces">
-          <End Role="enlaces" Type="Self.enlaces" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_enlace" Type="Self.historial_enlace" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="enlaces">
-              <PropertyRef Name="id_enlaces" />
-            </Principal>
-            <Dependent Role="historial_enlace">
-              <PropertyRef Name="id_enlaces" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_producto">
-          <End Role="products" Type="Self.products" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial" Type="Self.historial" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="products">
-              <PropertyRef Name="id_producto" />
-            </Principal>
-            <Dependent Role="historial">
-              <PropertyRef Name="id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_servidor">
-          <End Role="servidores" Type="Self.servidores" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_servidor" Type="Self.historial_servidor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="servidores">
-              <PropertyRef Name="id_servidor" />
-            </Principal>
-            <Dependent Role="historial_servidor">
-              <PropertyRef Name="id_servidor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_switrout">
-          <End Role="switrout" Type="Self.switrout" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="historial_switrout" Type="Self.historial_switrout" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="switrout">
-              <PropertyRef Name="id_switrout" />
-            </Principal>
-            <Dependent Role="historial_switrout">
-              <PropertyRef Name="id_switrout" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="simple_stockModelStoreContainer">
-          <EntitySet Name="accesspoint" EntityType="Self.accesspoint" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="almacenamiento" EntityType="Self.almacenamiento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="categorias" EntityType="Self.categorias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="centrodedatos" EntityType="Self.centrodedatos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="conmutador" EntityType="Self.conmutador" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="disprespaldo" EntityType="Self.disprespaldo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="enlaces" EntityType="Self.enlaces" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial" EntityType="Self.historial" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_access" EntityType="Self.historial_access" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_almacenamiento" EntityType="Self.historial_almacenamiento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_centro" EntityType="Self.historial_centro" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_conmutador" EntityType="Self.historial_conmutador" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_disprespaldo" EntityType="Self.historial_disprespaldo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_enlace" EntityType="Self.historial_enlace" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_servidor" EntityType="Self.historial_servidor" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="historial_switrout" EntityType="Self.historial_switrout" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="servidores" EntityType="Self.servidores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="switrout" EntityType="Self.switrout" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__centroded__id_ca__25869641" Association="Self.FK__centroded__id_ca__25869641">
-            <End Role="categorias" EntitySet="categorias" />
-            <End Role="centrodedatos" EntitySet="centrodedatos" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_ac__34C8D9D1" Association="Self.FK__historial__id_ac__34C8D9D1">
-            <End Role="accesspoint" EntitySet="accesspoint" />
-            <End Role="historial_access" EntitySet="historial_access" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_al__37A5467C" Association="Self.FK__historial__id_al__37A5467C">
-            <End Role="almacenamiento" EntitySet="almacenamiento" />
-            <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_ce__3A81B327" Association="Self.FK__historial__id_ce__3A81B327">
-            <End Role="centrodedatos" EntitySet="centrodedatos" />
-            <End Role="historial_centro" EntitySet="historial_centro" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_co__3D5E1FD2" Association="Self.FK__historial__id_co__3D5E1FD2">
-            <End Role="conmutador" EntitySet="conmutador" />
-            <End Role="historial_conmutador" EntitySet="historial_conmutador" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_di__403A8C7D" Association="Self.FK__historial__id_di__403A8C7D">
-            <End Role="disprespaldo" EntitySet="disprespaldo" />
-            <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_en__4316F928" Association="Self.FK__historial__id_en__4316F928">
-            <End Role="enlaces" EntitySet="enlaces" />
-            <End Role="historial_enlace" EntitySet="historial_enlace" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_pr__2F10007B" Association="Self.FK__historial__id_pr__2F10007B">
-            <End Role="products" EntitySet="products" />
-            <End Role="historial" EntitySet="historial" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_se__49C3F6B7" Association="Self.FK__historial__id_se__49C3F6B7">
-            <End Role="servidores" EntitySet="servidores" />
-            <End Role="historial_servidor" EntitySet="historial_servidor" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__id_sw__5070F446" Association="Self.FK__historial__id_sw__5070F446">
-            <End Role="switrout" EntitySet="switrout" />
-            <End Role="historial_switrout" EntitySet="historial_switrout" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___35BCFE0A" Association="Self.FK__historial__user___35BCFE0A">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_access" EntitySet="historial_access" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___38996AB5" Association="Self.FK__historial__user___38996AB5">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___3B75D760" Association="Self.FK__historial__user___3B75D760">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_centro" EntitySet="historial_centro" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___3E52440B" Association="Self.FK__historial__user___3E52440B">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_conmutador" EntitySet="historial_conmutador" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___412EB0B6" Association="Self.FK__historial__user___412EB0B6">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___440B1D61" Association="Self.FK__historial__user___440B1D61">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_enlace" EntitySet="historial_enlace" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___4AB81AF0" Association="Self.FK__historial__user___4AB81AF0">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_servidor" EntitySet="historial_servidor" />
-          </AssociationSet>
-          <AssociationSet Name="FK__historial__user___5165187F" Association="Self.FK__historial__user___5165187F">
-            <End Role="users" EntitySet="users" />
-            <End Role="historial_switrout" EntitySet="historial_switrout" />
-          </AssociationSet>
-          <AssociationSet Name="FK__servidore__id_ca__47DBAE45" Association="Self.FK__servidore__id_ca__47DBAE45">
-            <End Role="categorias" EntitySet="categorias" />
-            <End Role="servidores" EntitySet="servidores" />
-          </AssociationSet>
-          <AssociationSet Name="FK__switrout__id_cat__4E88ABD4" Association="Self.FK__switrout__id_cat__4E88ABD4">
-            <End Role="categorias" EntitySet="categorias" />
-            <End Role="switrout" EntitySet="switrout" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_accesspoint" Association="Self.fk_id_accesspoint">
-            <End Role="accesspoint" EntitySet="accesspoint" />
-            <End Role="historial_access" EntitySet="historial_access" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_almacenamiento" Association="Self.fk_id_almacenamiento">
-            <End Role="almacenamiento" EntitySet="almacenamiento" />
-            <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_centro" Association="Self.fk_id_centro">
-            <End Role="centrodedatos" EntitySet="centrodedatos" />
-            <End Role="historial_centro" EntitySet="historial_centro" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_conmutador" Association="Self.fk_id_conmutador">
-            <End Role="conmutador" EntitySet="conmutador" />
-            <End Role="historial_conmutador" EntitySet="historial_conmutador" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_disprespaldo" Association="Self.fk_id_disprespaldo">
-            <End Role="disprespaldo" EntitySet="disprespaldo" />
-            <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_enlaces" Association="Self.fk_id_enlaces">
-            <End Role="enlaces" EntitySet="enlaces" />
-            <End Role="historial_enlace" EntitySet="historial_enlace" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_producto" Association="Self.fk_id_producto">
-            <End Role="products" EntitySet="products" />
-            <End Role="historial" EntitySet="historial" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_servidor" Association="Self.fk_id_servidor">
-            <End Role="servidores" EntitySet="servidores" />
-            <End Role="historial_servidor" EntitySet="historial_servidor" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_switrout" Association="Self.fk_id_switrout">
-            <End Role="switrout" EntitySet="switrout" />
-            <End Role="historial_switrout" EntitySet="historial_switrout" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="simple_stockModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="simple_stockModelStoreContainer">
+    <EntitySet Name="accesspoint" EntityType="simple_stockModel.Store.accesspoint" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="almacenamiento" EntityType="simple_stockModel.Store.almacenamiento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="categorias" EntityType="simple_stockModel.Store.categorias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="centrodedatos" EntityType="simple_stockModel.Store.centrodedatos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="conmutador" EntityType="simple_stockModel.Store.conmutador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="disprespaldo" EntityType="simple_stockModel.Store.disprespaldo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="enlaces" EntityType="simple_stockModel.Store.enlaces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial" EntityType="simple_stockModel.Store.historial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_access" EntityType="simple_stockModel.Store.historial_access" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_almacenamiento" EntityType="simple_stockModel.Store.historial_almacenamiento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_centro" EntityType="simple_stockModel.Store.historial_centro" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_conmutador" EntityType="simple_stockModel.Store.historial_conmutador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_disprespaldo" EntityType="simple_stockModel.Store.historial_disprespaldo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_enlace" EntityType="simple_stockModel.Store.historial_enlace" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_servidor" EntityType="simple_stockModel.Store.historial_servidor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_switrout" EntityType="simple_stockModel.Store.historial_switrout" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products" EntityType="simple_stockModel.Store.products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="servidores" EntityType="simple_stockModel.Store.servidores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="switrout" EntityType="simple_stockModel.Store.switrout" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="simple_stockModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__historial__id_ac__34C8D9D1" Association="simple_stockModel.Store.FK__historial__id_ac__34C8D9D1">
+      <End Role="accesspoint" EntitySet="accesspoint" />
+      <End Role="historial_access" EntitySet="historial_access" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_accesspoint" Association="simple_stockModel.Store.fk_id_accesspoint">
+      <End Role="accesspoint" EntitySet="accesspoint" />
+      <End Role="historial_access" EntitySet="historial_access" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_al__37A5467C" Association="simple_stockModel.Store.FK__historial__id_al__37A5467C">
+      <End Role="almacenamiento" EntitySet="almacenamiento" />
+      <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_almacenamiento" Association="simple_stockModel.Store.fk_id_almacenamiento">
+      <End Role="almacenamiento" EntitySet="almacenamiento" />
+      <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__centroded__id_ca__25869641" Association="simple_stockModel.Store.FK__centroded__id_ca__25869641">
+      <End Role="categorias" EntitySet="categorias" />
+      <End Role="centrodedatos" EntitySet="centrodedatos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__servidore__id_ca__47DBAE45" Association="simple_stockModel.Store.FK__servidore__id_ca__47DBAE45">
+      <End Role="categorias" EntitySet="categorias" />
+      <End Role="servidores" EntitySet="servidores" />
+    </AssociationSet>
+    <AssociationSet Name="FK__switrout__id_cat__4E88ABD4" Association="simple_stockModel.Store.FK__switrout__id_cat__4E88ABD4">
+      <End Role="categorias" EntitySet="categorias" />
+      <End Role="switrout" EntitySet="switrout" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_ce__3A81B327" Association="simple_stockModel.Store.FK__historial__id_ce__3A81B327">
+      <End Role="centrodedatos" EntitySet="centrodedatos" />
+      <End Role="historial_centro" EntitySet="historial_centro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_centro" Association="simple_stockModel.Store.fk_id_centro">
+      <End Role="centrodedatos" EntitySet="centrodedatos" />
+      <End Role="historial_centro" EntitySet="historial_centro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_co__3D5E1FD2" Association="simple_stockModel.Store.FK__historial__id_co__3D5E1FD2">
+      <End Role="conmutador" EntitySet="conmutador" />
+      <End Role="historial_conmutador" EntitySet="historial_conmutador" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_conmutador" Association="simple_stockModel.Store.fk_id_conmutador">
+      <End Role="conmutador" EntitySet="conmutador" />
+      <End Role="historial_conmutador" EntitySet="historial_conmutador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_di__403A8C7D" Association="simple_stockModel.Store.FK__historial__id_di__403A8C7D">
+      <End Role="disprespaldo" EntitySet="disprespaldo" />
+      <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_disprespaldo" Association="simple_stockModel.Store.fk_id_disprespaldo">
+      <End Role="disprespaldo" EntitySet="disprespaldo" />
+      <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_en__4316F928" Association="simple_stockModel.Store.FK__historial__id_en__4316F928">
+      <End Role="enlaces" EntitySet="enlaces" />
+      <End Role="historial_enlace" EntitySet="historial_enlace" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_enlaces" Association="simple_stockModel.Store.fk_id_enlaces">
+      <End Role="enlaces" EntitySet="enlaces" />
+      <End Role="historial_enlace" EntitySet="historial_enlace" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_pr__2F10007B" Association="simple_stockModel.Store.FK__historial__id_pr__2F10007B">
+      <End Role="products" EntitySet="products" />
+      <End Role="historial" EntitySet="historial" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_producto" Association="simple_stockModel.Store.fk_id_producto">
+      <End Role="products" EntitySet="products" />
+      <End Role="historial" EntitySet="historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___35BCFE0A" Association="simple_stockModel.Store.FK__historial__user___35BCFE0A">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_access" EntitySet="historial_access" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___38996AB5" Association="simple_stockModel.Store.FK__historial__user___38996AB5">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_almacenamiento" EntitySet="historial_almacenamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___3B75D760" Association="simple_stockModel.Store.FK__historial__user___3B75D760">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_centro" EntitySet="historial_centro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___3E52440B" Association="simple_stockModel.Store.FK__historial__user___3E52440B">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_conmutador" EntitySet="historial_conmutador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___412EB0B6" Association="simple_stockModel.Store.FK__historial__user___412EB0B6">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_disprespaldo" EntitySet="historial_disprespaldo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___440B1D61" Association="simple_stockModel.Store.FK__historial__user___440B1D61">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_enlace" EntitySet="historial_enlace" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_se__49C3F6B7" Association="simple_stockModel.Store.FK__historial__id_se__49C3F6B7">
+      <End Role="servidores" EntitySet="servidores" />
+      <End Role="historial_servidor" EntitySet="historial_servidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___4AB81AF0" Association="simple_stockModel.Store.FK__historial__user___4AB81AF0">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_servidor" EntitySet="historial_servidor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_servidor" Association="simple_stockModel.Store.fk_id_servidor">
+      <End Role="servidores" EntitySet="servidores" />
+      <End Role="historial_servidor" EntitySet="historial_servidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__id_sw__5070F446" Association="simple_stockModel.Store.FK__historial__id_sw__5070F446">
+      <End Role="switrout" EntitySet="switrout" />
+      <End Role="historial_switrout" EntitySet="historial_switrout" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__user___5165187F" Association="simple_stockModel.Store.FK__historial__user___5165187F">
+      <End Role="users" EntitySet="users" />
+      <End Role="historial_switrout" EntitySet="historial_switrout" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_switrout" Association="simple_stockModel.Store.fk_id_switrout">
+      <End Role="switrout" EntitySet="switrout" />
+      <End Role="historial_switrout" EntitySet="historial_switrout" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="accesspoint">
+    <Key>
+      <PropertyRef Name="id_accesspoint" />
+    </Key>
+    <Property Name="id_accesspoint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estatus" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="asignado" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="mac_address" Type="int" Nullable="false" />
+    <Property Name="tipo_seguridad" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="almacenamiento">
+    <Key>
+      <PropertyRef Name="id_almacenamiento" />
+    </Key>
+    <Property Name="id_almacenamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_almacen" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="stock_almacen" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="capacidad" Type="int" Nullable="false" />
+    <Property Name="conectividad" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="categorias">
+    <Key>
+      <PropertyRef Name="id_categoria" />
+    </Key>
+    <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_categoria" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="descripcion_categoria" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="date_added" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="centrodedatos">
+    <Key>
+      <PropertyRef Name="id_centro" />
+    </Key>
+    <Property Name="id_centro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_centro" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="stock_center" Type="int" Nullable="false" />
+    <Property Name="planta_emergencia" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ups" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="aire_acondicionado" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="generalidades" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="conmutador">
+    <Key>
+      <PropertyRef Name="id_conmutador" />
+    </Key>
+    <Property Name="id_conmutador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_conmutador" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="tecnologia" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cant_entrantes" Type="int" Nullable="false" />
+    <Property Name="cant_extensiones" Type="int" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="disprespaldo">
+    <Key>
+      <PropertyRef Name="id_disprespaldo" />
+    </Key>
+    <Property Name="id_disprespaldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_resp" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="herramienta_resp" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="tipo_medio" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="informacion" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="periodicidad" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="lugar_resguardo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="enlaces">
+    <Key>
+      <PropertyRef Name="id_enlaces" />
+    </Key>
+    <Property Name="id_enlaces" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_enlace" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ancho_banda" Type="int" Nullable="false" />
+    <Property Name="frecuencia" Type="int" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="historial">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_producto" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_access">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_accesspoint" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_almacenamiento">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_almacenamiento" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_centro">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_centro" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_conmutador">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_conmutador" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_disprespaldo">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_disprespaldo" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_enlace">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_enlaces" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_servidor">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_servidor" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial_switrout">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_switrout" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="nota" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="referencia" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_producto" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="nombre_producto" Type="char" Nullable="false" MaxLength="255" />
+    <Property Name="asignado" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ubicacion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estado" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="date_added" Type="datetime" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="servidores">
+    <Key>
+      <PropertyRef Name="id_servidor" />
+    </Key>
+    <Property Name="id_servidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="tipo_servidor" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="nom_servidor" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ip_servidor" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_procesadores" Type="int" Nullable="false" />
+    <Property Name="tipo_procesador" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="vel_procesador" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="nivel_arreglo_discos" Type="int" Nullable="false" />
+    <Property Name="capacidad_almto" Type="int" Nullable="false" />
+    <Property Name="mem_ram" Type="int" Nullable="false" />
+    <Property Name="sist_operativos" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="aplic_principales" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cuenta_disp" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="interconectado_disp" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="esquema_virtual" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="switrout">
+    <Key>
+      <PropertyRef Name="id_switrout" />
+    </Key>
+    <Property Name="id_switrout" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_sr" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_inventario" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="num_serie" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="vel_transmicion" Type="int" Nullable="false" />
+    <Property Name="num_puertos" Type="int" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="url_image" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="lastname" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="user_name" Type="varchar" Nullable="true" MaxLength="64" />
+    <Property Name="user_password_hash" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="user_email" Type="varchar" Nullable="true" MaxLength="64" />
+    <Property Name="date_added" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__historial__id_ac__34C8D9D1">
+    <End Role="accesspoint" Type="simple_stockModel.Store.accesspoint" Multiplicity="1" />
+    <End Role="historial_access" Type="simple_stockModel.Store.historial_access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accesspoint">
+        <PropertyRef Name="id_accesspoint" />
+      </Principal>
+      <Dependent Role="historial_access">
+        <PropertyRef Name="id_accesspoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_accesspoint">
+    <End Role="accesspoint" Type="simple_stockModel.Store.accesspoint" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_access" Type="simple_stockModel.Store.historial_access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accesspoint">
+        <PropertyRef Name="id_accesspoint" />
+      </Principal>
+      <Dependent Role="historial_access">
+        <PropertyRef Name="id_accesspoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_al__37A5467C">
+    <End Role="almacenamiento" Type="simple_stockModel.Store.almacenamiento" Multiplicity="1" />
+    <End Role="historial_almacenamiento" Type="simple_stockModel.Store.historial_almacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="almacenamiento">
+        <PropertyRef Name="id_almacenamiento" />
+      </Principal>
+      <Dependent Role="historial_almacenamiento">
+        <PropertyRef Name="id_almacenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_almacenamiento">
+    <End Role="almacenamiento" Type="simple_stockModel.Store.almacenamiento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_almacenamiento" Type="simple_stockModel.Store.historial_almacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="almacenamiento">
+        <PropertyRef Name="id_almacenamiento" />
+      </Principal>
+      <Dependent Role="historial_almacenamiento">
+        <PropertyRef Name="id_almacenamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__centroded__id_ca__25869641">
+    <End Role="categorias" Type="simple_stockModel.Store.categorias" Multiplicity="1" />
+    <End Role="centrodedatos" Type="simple_stockModel.Store.centrodedatos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categorias">
+        <PropertyRef Name="id_categoria" />
+      </Principal>
+      <Dependent Role="centrodedatos">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__servidore__id_ca__47DBAE45">
+    <End Role="categorias" Type="simple_stockModel.Store.categorias" Multiplicity="1" />
+    <End Role="servidores" Type="simple_stockModel.Store.servidores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categorias">
+        <PropertyRef Name="id_categoria" />
+      </Principal>
+      <Dependent Role="servidores">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__switrout__id_cat__4E88ABD4">
+    <End Role="categorias" Type="simple_stockModel.Store.categorias" Multiplicity="1" />
+    <End Role="switrout" Type="simple_stockModel.Store.switrout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categorias">
+        <PropertyRef Name="id_categoria" />
+      </Principal>
+      <Dependent Role="switrout">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_ce__3A81B327">
+    <End Role="centrodedatos" Type="simple_stockModel.Store.centrodedatos" Multiplicity="1" />
+    <End Role="historial_centro" Type="simple_stockModel.Store.historial_centro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="centrodedatos">
+        <PropertyRef Name="id_centro" />
+      </Principal>
+      <Dependent Role="historial_centro">
+        <PropertyRef Name="id_centro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_centro">
+    <End Role="centrodedatos" Type="simple_stockModel.Store.centrodedatos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_centro" Type="simple_stockModel.Store.historial_centro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="centrodedatos">
+        <PropertyRef Name="id_centro" />
+      </Principal>
+      <Dependent Role="historial_centro">
+        <PropertyRef Name="id_centro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_co__3D5E1FD2">
+    <End Role="conmutador" Type="simple_stockModel.Store.conmutador" Multiplicity="1" />
+    <End Role="historial_conmutador" Type="simple_stockModel.Store.historial_conmutador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="conmutador">
+        <PropertyRef Name="id_conmutador" />
+      </Principal>
+      <Dependent Role="historial_conmutador">
+        <PropertyRef Name="id_conmutador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_conmutador">
+    <End Role="conmutador" Type="simple_stockModel.Store.conmutador" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_conmutador" Type="simple_stockModel.Store.historial_conmutador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="conmutador">
+        <PropertyRef Name="id_conmutador" />
+      </Principal>
+      <Dependent Role="historial_conmutador">
+        <PropertyRef Name="id_conmutador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_di__403A8C7D">
+    <End Role="disprespaldo" Type="simple_stockModel.Store.disprespaldo" Multiplicity="1" />
+    <End Role="historial_disprespaldo" Type="simple_stockModel.Store.historial_disprespaldo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="disprespaldo">
+        <PropertyRef Name="id_disprespaldo" />
+      </Principal>
+      <Dependent Role="historial_disprespaldo">
+        <PropertyRef Name="id_disprespaldo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_disprespaldo">
+    <End Role="disprespaldo" Type="simple_stockModel.Store.disprespaldo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_disprespaldo" Type="simple_stockModel.Store.historial_disprespaldo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="disprespaldo">
+        <PropertyRef Name="id_disprespaldo" />
+      </Principal>
+      <Dependent Role="historial_disprespaldo">
+        <PropertyRef Name="id_disprespaldo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_en__4316F928">
+    <End Role="enlaces" Type="simple_stockModel.Store.enlaces" Multiplicity="1" />
+    <End Role="historial_enlace" Type="simple_stockModel.Store.historial_enlace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="enlaces">
+        <PropertyRef Name="id_enlaces" />
+      </Principal>
+      <Dependent Role="historial_enlace">
+        <PropertyRef Name="id_enlaces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_enlaces">
+    <End Role="enlaces" Type="simple_stockModel.Store.enlaces" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_enlace" Type="simple_stockModel.Store.historial_enlace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="enlaces">
+        <PropertyRef Name="id_enlaces" />
+      </Principal>
+      <Dependent Role="historial_enlace">
+        <PropertyRef Name="id_enlaces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_pr__2F10007B">
+    <End Role="products" Type="simple_stockModel.Store.products" Multiplicity="1" />
+    <End Role="historial" Type="simple_stockModel.Store.historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="historial">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_producto">
+    <End Role="products" Type="simple_stockModel.Store.products" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial" Type="simple_stockModel.Store.historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="historial">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___35BCFE0A">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_access" Type="simple_stockModel.Store.historial_access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_access">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___38996AB5">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_almacenamiento" Type="simple_stockModel.Store.historial_almacenamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_almacenamiento">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___3B75D760">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_centro" Type="simple_stockModel.Store.historial_centro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_centro">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___3E52440B">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_conmutador" Type="simple_stockModel.Store.historial_conmutador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_conmutador">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___412EB0B6">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_disprespaldo" Type="simple_stockModel.Store.historial_disprespaldo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_disprespaldo">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___440B1D61">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_enlace" Type="simple_stockModel.Store.historial_enlace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_enlace">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_se__49C3F6B7">
+    <End Role="servidores" Type="simple_stockModel.Store.servidores" Multiplicity="1" />
+    <End Role="historial_servidor" Type="simple_stockModel.Store.historial_servidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servidores">
+        <PropertyRef Name="id_servidor" />
+      </Principal>
+      <Dependent Role="historial_servidor">
+        <PropertyRef Name="id_servidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___4AB81AF0">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_servidor" Type="simple_stockModel.Store.historial_servidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_servidor">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_servidor">
+    <End Role="servidores" Type="simple_stockModel.Store.servidores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_servidor" Type="simple_stockModel.Store.historial_servidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servidores">
+        <PropertyRef Name="id_servidor" />
+      </Principal>
+      <Dependent Role="historial_servidor">
+        <PropertyRef Name="id_servidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__id_sw__5070F446">
+    <End Role="switrout" Type="simple_stockModel.Store.switrout" Multiplicity="1" />
+    <End Role="historial_switrout" Type="simple_stockModel.Store.historial_switrout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="switrout">
+        <PropertyRef Name="id_switrout" />
+      </Principal>
+      <Dependent Role="historial_switrout">
+        <PropertyRef Name="id_switrout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__user___5165187F">
+    <End Role="users" Type="simple_stockModel.Store.users" Multiplicity="1" />
+    <End Role="historial_switrout" Type="simple_stockModel.Store.historial_switrout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="historial_switrout">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_switrout">
+    <End Role="switrout" Type="simple_stockModel.Store.switrout" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="historial_switrout" Type="simple_stockModel.Store.historial_switrout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="switrout">
+        <PropertyRef Name="id_switrout" />
+      </Principal>
+      <Dependent Role="historial_switrout">
+        <PropertyRef Name="id_switrout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="simple_stockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1145,12 +1144,12 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="user_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="user_password_hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="user_email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date_added" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="firstname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="user_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="user_password_hash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="user_email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="date_added" Type="DateTime" Nullable="true" Precision="3" />
           <NavigationProperty Name="historial_access" Relationship="Self.FK__historial__user___35BCFE0A" FromRole="users" ToRole="historial_access" />
           <NavigationProperty Name="historial_almacenamiento" Relationship="Self.FK__historial__user___38996AB5" FromRole="users" ToRole="historial_almacenamiento" />
           <NavigationProperty Name="historial_centro" Relationship="Self.FK__historial__user___3B75D760" FromRole="users" ToRole="historial_centro" />
@@ -1668,325 +1667,324 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="simple_stockModelStoreContainer" CdmEntityContainer="simple_stockEntities">
-          <EntitySetMapping Name="accesspoint">
-            <EntityTypeMapping TypeName="simple_stockModel.accesspoint">
-              <MappingFragment StoreEntitySet="accesspoint">
-                <ScalarProperty Name="id_accesspoint" ColumnName="id_accesspoint" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="estatus" ColumnName="estatus" />
-                <ScalarProperty Name="asignado" ColumnName="asignado" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="mac_address" ColumnName="mac_address" />
-                <ScalarProperty Name="tipo_seguridad" ColumnName="tipo_seguridad" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="almacenamiento">
-            <EntityTypeMapping TypeName="simple_stockModel.almacenamiento">
-              <MappingFragment StoreEntitySet="almacenamiento">
-                <ScalarProperty Name="id_almacenamiento" ColumnName="id_almacenamiento" />
-                <ScalarProperty Name="nombre_almacen" ColumnName="nombre_almacen" />
-                <ScalarProperty Name="stock_almacen" ColumnName="stock_almacen" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="capacidad" ColumnName="capacidad" />
-                <ScalarProperty Name="conectividad" ColumnName="conectividad" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="categorias">
-            <EntityTypeMapping TypeName="simple_stockModel.categorias">
-              <MappingFragment StoreEntitySet="categorias">
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="nombre_categoria" ColumnName="nombre_categoria" />
-                <ScalarProperty Name="descripcion_categoria" ColumnName="descripcion_categoria" />
-                <ScalarProperty Name="date_added" ColumnName="date_added" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="centrodedatos">
-            <EntityTypeMapping TypeName="simple_stockModel.centrodedatos">
-              <MappingFragment StoreEntitySet="centrodedatos">
-                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
-                <ScalarProperty Name="nombre_centro" ColumnName="nombre_centro" />
-                <ScalarProperty Name="stock_center" ColumnName="stock_center" />
-                <ScalarProperty Name="planta_emergencia" ColumnName="planta_emergencia" />
-                <ScalarProperty Name="ups" ColumnName="ups" />
-                <ScalarProperty Name="aire_acondicionado" ColumnName="aire_acondicionado" />
-                <ScalarProperty Name="generalidades" ColumnName="generalidades" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="conmutador">
-            <EntityTypeMapping TypeName="simple_stockModel.conmutador">
-              <MappingFragment StoreEntitySet="conmutador">
-                <ScalarProperty Name="id_conmutador" ColumnName="id_conmutador" />
-                <ScalarProperty Name="nombre_conmutador" ColumnName="nombre_conmutador" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="tecnologia" ColumnName="tecnologia" />
-                <ScalarProperty Name="cant_entrantes" ColumnName="cant_entrantes" />
-                <ScalarProperty Name="cant_extensiones" ColumnName="cant_extensiones" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="disprespaldo">
-            <EntityTypeMapping TypeName="simple_stockModel.disprespaldo">
-              <MappingFragment StoreEntitySet="disprespaldo">
-                <ScalarProperty Name="id_disprespaldo" ColumnName="id_disprespaldo" />
-                <ScalarProperty Name="nombre_resp" ColumnName="nombre_resp" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="herramienta_resp" ColumnName="herramienta_resp" />
-                <ScalarProperty Name="tipo_medio" ColumnName="tipo_medio" />
-                <ScalarProperty Name="informacion" ColumnName="informacion" />
-                <ScalarProperty Name="periodicidad" ColumnName="periodicidad" />
-                <ScalarProperty Name="lugar_resguardo" ColumnName="lugar_resguardo" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="enlaces">
-            <EntityTypeMapping TypeName="simple_stockModel.enlaces">
-              <MappingFragment StoreEntitySet="enlaces">
-                <ScalarProperty Name="id_enlaces" ColumnName="id_enlaces" />
-                <ScalarProperty Name="nombre_enlace" ColumnName="nombre_enlace" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="ancho_banda" ColumnName="ancho_banda" />
-                <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial">
-            <EntityTypeMapping TypeName="simple_stockModel.historial">
-              <MappingFragment StoreEntitySet="historial">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_access">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_access">
-              <MappingFragment StoreEntitySet="historial_access">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_accesspoint" ColumnName="id_accesspoint" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_almacenamiento">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_almacenamiento">
-              <MappingFragment StoreEntitySet="historial_almacenamiento">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_almacenamiento" ColumnName="id_almacenamiento" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_centro">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_centro">
-              <MappingFragment StoreEntitySet="historial_centro">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_conmutador">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_conmutador">
-              <MappingFragment StoreEntitySet="historial_conmutador">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_conmutador" ColumnName="id_conmutador" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_disprespaldo">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_disprespaldo">
-              <MappingFragment StoreEntitySet="historial_disprespaldo">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_disprespaldo" ColumnName="id_disprespaldo" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_enlace">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_enlace">
-              <MappingFragment StoreEntitySet="historial_enlace">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_enlaces" ColumnName="id_enlaces" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_servidor">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_servidor">
-              <MappingFragment StoreEntitySet="historial_servidor">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="historial_switrout">
-            <EntityTypeMapping TypeName="simple_stockModel.historial_switrout">
-              <MappingFragment StoreEntitySet="historial_switrout">
-                <ScalarProperty Name="id_historial" ColumnName="id_historial" />
-                <ScalarProperty Name="id_switrout" ColumnName="id_switrout" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="referencia" ColumnName="referencia" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="simple_stockModel.products">
-              <MappingFragment StoreEntitySet="products">
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-                <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
-                <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
-                <ScalarProperty Name="asignado" ColumnName="asignado" />
-                <ScalarProperty Name="stock" ColumnName="stock" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="serie" ColumnName="serie" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="date_added" ColumnName="date_added" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="servidores">
-            <EntityTypeMapping TypeName="simple_stockModel.servidores">
-              <MappingFragment StoreEntitySet="servidores">
-                <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="tipo_servidor" ColumnName="tipo_servidor" />
-                <ScalarProperty Name="nom_servidor" ColumnName="nom_servidor" />
-                <ScalarProperty Name="ip_servidor" ColumnName="ip_servidor" />
-                <ScalarProperty Name="num_procesadores" ColumnName="num_procesadores" />
-                <ScalarProperty Name="tipo_procesador" ColumnName="tipo_procesador" />
-                <ScalarProperty Name="vel_procesador" ColumnName="vel_procesador" />
-                <ScalarProperty Name="nivel_arreglo_discos" ColumnName="nivel_arreglo_discos" />
-                <ScalarProperty Name="capacidad_almto" ColumnName="capacidad_almto" />
-                <ScalarProperty Name="mem_ram" ColumnName="mem_ram" />
-                <ScalarProperty Name="sist_operativos" ColumnName="sist_operativos" />
-                <ScalarProperty Name="aplic_principales" ColumnName="aplic_principales" />
-                <ScalarProperty Name="cuenta_disp" ColumnName="cuenta_disp" />
-                <ScalarProperty Name="interconectado_disp" ColumnName="interconectado_disp" />
-                <ScalarProperty Name="esquema_virtual" ColumnName="esquema_virtual" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="switrout">
-            <EntityTypeMapping TypeName="simple_stockModel.switrout">
-              <MappingFragment StoreEntitySet="switrout">
-                <ScalarProperty Name="id_switrout" ColumnName="id_switrout" />
-                <ScalarProperty Name="nombre_sr" ColumnName="nombre_sr" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="modelo" ColumnName="modelo" />
-                <ScalarProperty Name="num_serie" ColumnName="num_serie" />
-                <ScalarProperty Name="vel_transmicion" ColumnName="vel_transmicion" />
-                <ScalarProperty Name="num_puertos" ColumnName="num_puertos" />
-                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="url_image" ColumnName="url_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="simple_stockModel.users">
-              <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="user_name" ColumnName="user_name" />
-                <ScalarProperty Name="user_password_hash" ColumnName="user_password_hash" />
-                <ScalarProperty Name="user_email" ColumnName="user_email" />
-                <ScalarProperty Name="date_added" ColumnName="date_added" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="simple_stockModelStoreContainer" CdmEntityContainer="simple_stockEntities">
+    <EntitySetMapping Name="accesspoint">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.accesspoint)">
+        <MappingFragment StoreEntitySet="accesspoint">
+          <ScalarProperty Name="id_accesspoint" ColumnName="id_accesspoint" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="asignado" ColumnName="asignado" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="mac_address" ColumnName="mac_address" />
+          <ScalarProperty Name="tipo_seguridad" ColumnName="tipo_seguridad" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="almacenamiento">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.almacenamiento)">
+        <MappingFragment StoreEntitySet="almacenamiento">
+          <ScalarProperty Name="id_almacenamiento" ColumnName="id_almacenamiento" />
+          <ScalarProperty Name="nombre_almacen" ColumnName="nombre_almacen" />
+          <ScalarProperty Name="stock_almacen" ColumnName="stock_almacen" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="capacidad" ColumnName="capacidad" />
+          <ScalarProperty Name="conectividad" ColumnName="conectividad" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categorias">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.categorias)">
+        <MappingFragment StoreEntitySet="categorias">
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="nombre_categoria" ColumnName="nombre_categoria" />
+          <ScalarProperty Name="descripcion_categoria" ColumnName="descripcion_categoria" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="centrodedatos">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.centrodedatos)">
+        <MappingFragment StoreEntitySet="centrodedatos">
+          <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+          <ScalarProperty Name="nombre_centro" ColumnName="nombre_centro" />
+          <ScalarProperty Name="stock_center" ColumnName="stock_center" />
+          <ScalarProperty Name="planta_emergencia" ColumnName="planta_emergencia" />
+          <ScalarProperty Name="ups" ColumnName="ups" />
+          <ScalarProperty Name="aire_acondicionado" ColumnName="aire_acondicionado" />
+          <ScalarProperty Name="generalidades" ColumnName="generalidades" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conmutador">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.conmutador)">
+        <MappingFragment StoreEntitySet="conmutador">
+          <ScalarProperty Name="id_conmutador" ColumnName="id_conmutador" />
+          <ScalarProperty Name="nombre_conmutador" ColumnName="nombre_conmutador" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="tecnologia" ColumnName="tecnologia" />
+          <ScalarProperty Name="cant_entrantes" ColumnName="cant_entrantes" />
+          <ScalarProperty Name="cant_extensiones" ColumnName="cant_extensiones" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="disprespaldo">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.disprespaldo)">
+        <MappingFragment StoreEntitySet="disprespaldo">
+          <ScalarProperty Name="id_disprespaldo" ColumnName="id_disprespaldo" />
+          <ScalarProperty Name="nombre_resp" ColumnName="nombre_resp" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="herramienta_resp" ColumnName="herramienta_resp" />
+          <ScalarProperty Name="tipo_medio" ColumnName="tipo_medio" />
+          <ScalarProperty Name="informacion" ColumnName="informacion" />
+          <ScalarProperty Name="periodicidad" ColumnName="periodicidad" />
+          <ScalarProperty Name="lugar_resguardo" ColumnName="lugar_resguardo" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="enlaces">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.enlaces)">
+        <MappingFragment StoreEntitySet="enlaces">
+          <ScalarProperty Name="id_enlaces" ColumnName="id_enlaces" />
+          <ScalarProperty Name="nombre_enlace" ColumnName="nombre_enlace" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="ancho_banda" ColumnName="ancho_banda" />
+          <ScalarProperty Name="frecuencia" ColumnName="frecuencia" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial)">
+        <MappingFragment StoreEntitySet="historial">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_access">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_access)">
+        <MappingFragment StoreEntitySet="historial_access">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_accesspoint" ColumnName="id_accesspoint" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_almacenamiento">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_almacenamiento)">
+        <MappingFragment StoreEntitySet="historial_almacenamiento">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_almacenamiento" ColumnName="id_almacenamiento" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_centro">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_centro)">
+        <MappingFragment StoreEntitySet="historial_centro">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_conmutador">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_conmutador)">
+        <MappingFragment StoreEntitySet="historial_conmutador">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_conmutador" ColumnName="id_conmutador" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_disprespaldo">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_disprespaldo)">
+        <MappingFragment StoreEntitySet="historial_disprespaldo">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_disprespaldo" ColumnName="id_disprespaldo" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_enlace">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_enlace)">
+        <MappingFragment StoreEntitySet="historial_enlace">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_enlaces" ColumnName="id_enlaces" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_servidor">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_servidor)">
+        <MappingFragment StoreEntitySet="historial_servidor">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_switrout">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.historial_switrout)">
+        <MappingFragment StoreEntitySet="historial_switrout">
+          <ScalarProperty Name="id_historial" ColumnName="id_historial" />
+          <ScalarProperty Name="id_switrout" ColumnName="id_switrout" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.products)">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+          <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+          <ScalarProperty Name="asignado" ColumnName="asignado" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="serie" ColumnName="serie" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servidores">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.servidores)">
+        <MappingFragment StoreEntitySet="servidores">
+          <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="tipo_servidor" ColumnName="tipo_servidor" />
+          <ScalarProperty Name="nom_servidor" ColumnName="nom_servidor" />
+          <ScalarProperty Name="ip_servidor" ColumnName="ip_servidor" />
+          <ScalarProperty Name="num_procesadores" ColumnName="num_procesadores" />
+          <ScalarProperty Name="tipo_procesador" ColumnName="tipo_procesador" />
+          <ScalarProperty Name="vel_procesador" ColumnName="vel_procesador" />
+          <ScalarProperty Name="nivel_arreglo_discos" ColumnName="nivel_arreglo_discos" />
+          <ScalarProperty Name="capacidad_almto" ColumnName="capacidad_almto" />
+          <ScalarProperty Name="mem_ram" ColumnName="mem_ram" />
+          <ScalarProperty Name="sist_operativos" ColumnName="sist_operativos" />
+          <ScalarProperty Name="aplic_principales" ColumnName="aplic_principales" />
+          <ScalarProperty Name="cuenta_disp" ColumnName="cuenta_disp" />
+          <ScalarProperty Name="interconectado_disp" ColumnName="interconectado_disp" />
+          <ScalarProperty Name="esquema_virtual" ColumnName="esquema_virtual" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="switrout">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.switrout)">
+        <MappingFragment StoreEntitySet="switrout">
+          <ScalarProperty Name="id_switrout" ColumnName="id_switrout" />
+          <ScalarProperty Name="nombre_sr" ColumnName="nombre_sr" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="num_inventario" ColumnName="num_inventario" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="num_serie" ColumnName="num_serie" />
+          <ScalarProperty Name="vel_transmicion" ColumnName="vel_transmicion" />
+          <ScalarProperty Name="num_puertos" ColumnName="num_puertos" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_image" ColumnName="url_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="IsTypeOf(simple_stockModel.users)">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_password_hash" ColumnName="user_password_hash" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -2000,7 +1998,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>

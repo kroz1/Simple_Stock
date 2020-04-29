@@ -280,6 +280,7 @@
       <DependentUpon>ModelStock.edmx</DependentUpon>
       <LastGenOutput>ModelStock.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ModelStock.edmx.sql" />
     <Content Include="Models\ModelStock.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelStock.edmx</DependentUpon>
